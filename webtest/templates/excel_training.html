@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<title>中文</title>
+
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+
+	<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">-->
+
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brandname">
+		</div>
+		<h2>excel数据上传</h2>
+			<p>预测数据填报</p>
+	</div>
+
+	</header>
+	<div class="ml-container">
+
+
+		<!--转换为multipart/form-data格式可以读取-->
+		<form id="form1" method="post" action="/api/upload" enctype="multipart/form-data">
+			<div>
+				<input id="File1" type="file" name="myfile"/>
+				<input type="submit">提交</input>
+    	</div>
+		</form>
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		    <!--<input name="message2" type="text" name="comment"/>-->
+            <!--<input class="form-control" type="文件名" name="file" value="请上传excel文件">-->
+            <br/>
+			<input type="submit" class="btn-info" value="半监督学习预测">
+		</form>
+
+	<br/>
+	</div>
+
+<div>
+	<h3>
+		拼装过程动态展示：
+	</h3>
+	<!--加http-->
+	<iframe style='width: 100%;height:500px'  id="if"   >
+
+
+	</iframe>
+</div>
+
+
+
+<script  type="text/javascript">
+	//伪AJAX
+	window.onload = function jiazai() {
+		var tagerturl= 'http://www.bilibili.com';
+		console.log(tagerturl);
+		document.getElementById('if').src=tagerturl
+	}
+
+
+</script>
+
+</body>
+</html>
+

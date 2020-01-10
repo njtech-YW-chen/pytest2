@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>机器学习平台部署</title>
+
+    <link rel="stylesheet" type="text/css" href="../static/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/component.css" />
+
+    <script src="../static/js/modernizr.custom.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="fs-form-wrap"  id="fs-form-wrap">
+        <div class="fs-title">
+            <h1>江北新区数据收集平台</h1>
+        </div>
+        <form id="myform" class="fs-form fs-form-full" autocomplete="off" action="{{ url_for('insert')}}" method="post">
+            <ol class="fs-fields">
+                <li data-input-trigger>
+                    <!--需修改id,name-->
+                    <label class="fs-field-label fs-anim-upper" for="q1" data-info="可考虑桥宽因素及标准规范">江北新区城市桥梁车道数选择哪种较为合适？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q1a" name="q1" type="radio" value="4"/><label for="q1a" class="radio-four">四车道</label></span>
+                        <span><input id="q1b" name="q1" type="radio" value="6"/><label for="q1b" class="radio-six">六车道</label></span>
+                        <span><input id="q1b" name="q1" type="radio" value="6"/><label for="q1b" class="radio-six2">六车道</label></span>
+                    </div>
+                </li>
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q2" data-info="可考虑设计情况及标准规范">江北新区城市桥梁公路等级应为？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q2a" name="q2" type="radio" value="1"/><label for="q2a" class="radio-conversion">公路一级</label></span>
+                        <span><input id="q2b" name="q2" type="radio" value="2"/><label for="q2b" class="radio-social">公路二级</label></span>
+                    </div>
+                </li>
+
+
+                <li data-input-trigger>
+                <label class="fs-field-label fs-anim-upper" for="q3" data-info="考虑设计需求及标准规范">江北新区城市桥梁预期寿命为？</label>
+                <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                    <span><input id="q3b" name="q3" type="radio" value="100"/><label for="q3b" class="radio-conversion">100年</label></span>
+                    <span><input id="q3c" name="q3" type="radio" value="120"/><label for="q3c" class="radio-social">120年</label></span>
+                </div>
+                </li>
+
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q4" data-info="考虑附件道路流通情况、路口是否通畅">江北新区城市桥梁道路运输环境为？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q4a" name="q4" type="radio" value="1"/><label for="q4a" class="radio-conversion">较差</label></span>
+                        <span><input id="q4b" name="q4" type="radio" value="2"/><label for="q4b" class="radio-social">一般</label></span>
+                        <span><input id="q4c" name="q4" type="radio" value="3"/><label for="q4c" class="radio-mobile">较好</label></span>
+                    </div>
+                </li>
+
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q5" data-info="考虑当前地区情况以及标准规范">江北新区抗震等级为？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q5a" name="q5" type="radio" value="1"/><label for="q5a" class="radio-conversion">抗震一级</label></span>
+                        <span><input id="q5b" name="q5" type="radio" value="2"/><label for="q5b" class="radio-social">抗震二级</label></span>
+                        <span><input id="q5c" name="q5" type="radio" value="3"/><label for="q5c" class="radio-mobile">抗震三级</label></span>
+                        <span><input id="q5d" name="q5" type="radio" value="4"/><label for="q5d" class="radio-mobile">抗震四级</label></span>
+                    </div>
+                </li>
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q6" data-info="考虑施工单位进度计划">江北新区城市桥梁项目工期现状？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q6a" name="q6" type="radio" value="1"/><label for="q6a" class="radio-conversion">工期紧张</label></span>
+                        <span><input id="q6b" name="q6" type="radio" value="2"/><label for="q6b" class="radio-social">工期一般</label></span>
+                        <span><input id="q6c" name="q6" type="radio" value="3"/><label for="q6c" class="radio-mobile">工期充裕</label></span>
+                    </div>
+                </li>
+
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q7" data-info="考虑当前政策要求以及施工形式">江北新区城市桥梁绿色要求？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q7a" name="q7" type="radio" value="1"/><label for="q7a" class="radio-conversion">绿色要求较低</label></span>
+                        <span><input id="q7b" name="q7" type="radio" value="2"/><label for="q7b" class="radio-social">绿色要求一般</label></span>
+                        <span><input id="q7c" name="q7" type="radio" value="3"/><label for="q7c" class="radio-mobile">绿色要求较高</label></span>
+                    </div>
+                </li>
+
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q8" data-info="考虑桥梁规划目的">江北新区城市桥梁预计交通量？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q8a" name="q8" type="radio" value="1"/><label for="q8a" class="radio-conversion">车辆较少</label></span>
+                        <span><input id="q8b" name="q8" type="radio" value="2"/><label for="q8b" class="radio-social">车辆一般</label></span>
+                        <span><input id="q8c" name="q8" type="radio" value="3"/><label for="q8c" class="radio-mobile">车辆较多</label></span>
+                    </div>
+                </li>
+
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q9" data-info="考虑施工条件、项目标书">江北新区城市桥梁资金投入？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q9a" name="q9" type="radio" value="1"/><label for="q9a" class="radio-conversion">资金较少</label></span>
+                        <span><input id="q9b" name="q9" type="radio" value="2"/><label for="q9b" class="radio-social">资金一般</label></span>
+                        <span><input id="q9c" name="q9" type="radio" value="3"/><label for="q9c" class="radio-mobile">资金充裕</label></span>
+                    </div>
+                </li>
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q10" data-info="考虑变道加宽情况">江北新区城市桥梁是否有加宽需求？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q10a" name="q10" type="radio" value="0"/><label for="q10a" class="radio-conversion">无</label></span>
+                        <span><input id="q10b" name="q10" type="radio" value="1"/><label for="q10b" class="radio-social">有</label></span>
+                    </div>
+                </li>
+
+                <li data-input-trigger>
+                    <label class="fs-field-label fs-anim-upper" for="q11" data-info="作为桥梁选择形式纳入评价数据库">江北新区城市桥梁合适类型选择？</label>
+                    <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+                        <span><input id="q11a" name="q11" type="radio" value="1"/><label for="q11a" class="radio-conversion">I型桥梁组合</label></span>
+                        <span><input id="q11b" name="q11" type="radio" value="2"/><label for="q11b" class="radio-social">II型桥梁组合</label></span>
+                        <span><input id="q11c" name="q11" type="radio" value="3"/><label for="q11c" class="radio-conversion">III型桥梁组合</label></span>
+                    </div>
+                </li>
+
+
+            </ol><!-- /fs-fields -->
+            <button class="fs-submit" type="submit">上传数据库</button>
+            <br>
+            <br>
+            <br>
+            <button class="fs-submit" type="submit">算法预测</button>
+        </form><!-- /fs-form -->
+    </div>
+</div>
+<script src="../static/js/classie.js"></script>
+<script src="../static/js/selectFx.js"></script>
+<script src="../static/js/fullscreenForm.js"></script>
+<script>
+    (function() {
+				//get到html ID
+				var formWrap = document.getElementById( 'fs-form-wrap' );
+				//get到class 内容
+				[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
+					new SelectFx( el, {
+						stickyPlaceholder: false,
+						onChange: function(val){
+							document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+						}
+					});
+				} );
+
+				new FForm( formWrap, {
+					onReview : function() {
+						classie.add( document.body, 'overview' ); // for demo purposes only
+					}
+				} );
+			})();
+</script>
+</body>
+</html>

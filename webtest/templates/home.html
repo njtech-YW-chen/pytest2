@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+	<title>中文</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">-->
+
+</head>
+<body>
+	<header>
+		<div class="container">
+		<div id="brandname">
+			机器学习网页部署
+		</div>
+		<h2>随机森林钢桥智能选型</h2>
+	</div>
+
+	</header>
+	<div class="ml-container">
+		<form action="{{ url_for('predict')}}" method="POST">
+            <p>预测数据填报</p>
+		    <!--<input name="message2" type="text" name="comment"/>-->
+
+            车道数：<select name="message1">
+                <option value="6">六车道</option>
+                <option value="4">四车道</option>
+            </select>
+            <br/>
+            公路等级：<select name="message2">
+                <option value="1">公路一级</option>
+                <option value="2">公路二级</option>
+            </select>
+            <br/>
+            桥梁预期寿命：<select name="message3">
+                <option value="120">120年</option>
+                <option value="100">100年</option>
+            </select>
+            <br/>
+            道路运输环境：<select name="message4">
+                <option value="1">A类</option>
+                <option value="2">B类</option>
+                <option value="3">C类</option>
+            </select>
+            <br/>
+            抗震等级：<select name="message5">
+                <option value="1">一级</option>
+                <option value="2">二级</option>
+                <option value="3">三级</option>
+                <option value="4">四级</option>
+            </select>
+            <br/>
+            工期：<select name="message6">
+                <option value="1">充裕</option>
+                <option value="2">一般</option>
+                <option value="3">紧急</option>
+            </select>
+            <br/>
+            绿色要求：<select name="message7">
+                <option value="1">较低</option>
+                <option value="2">一般</option>
+                <option value="3">高</option>
+            </select>
+            <br/>
+            预计交通量：<select name="message8">
+                <option value="1">较少</option>
+                <option value="2">正常</option>
+                <option value="3">较高</option>
+            </select>
+            <br/>
+            资金投入：<select name="message9">
+                <option value="1">较少</option>
+                <option value="2">一般</option>
+                <option value="3">充裕</option>
+            </select>
+            <br/>
+            是否加宽：<select name="message10">
+                <option value="0">是</option>
+                <option value="1">否</option>
+            </select>
+            <br/>
+            <!--<textarea name="message" rows="4" cols="50"></textarea>-->
+		<br/>
+
+		<input type="submit" class="btn-info" value="预测">
+	</form>
+        <form action="{{ url_for('turn')}}" method="POST">
+            <input type="submit" class="btn-info" value="结果显示">
+        </form>
+	</div>
+</body>
+</html>
+
+
